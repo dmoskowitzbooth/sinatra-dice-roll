@@ -52,3 +52,15 @@ get("/dice/5/4") do
   @outcome="You rolled a #{first_die} on the first die, a #{second_die} on the second die, a #{third_die} on the third die, a #{fourth_die} on the fourth die, and a #{fifth_die} on the fifth die for a total of #{sum}"
  erb(:five_four)
 end
+
+get("/dice/100/6") do
+  @rolls=[]
+
+  100.times do
+    die=rand(1..6)
+
+    @rolls.push(die)
+  end
+
+  erb(:one_hundred_six)
+end
